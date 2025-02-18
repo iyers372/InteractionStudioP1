@@ -256,3 +256,13 @@ function makeDraggable() {
 
 
 setTimeout(triggerFinalAnimation, 65000);
+
+document.addEventListener("DOMContentLoaded", function () {
+    
+    document.documentElement.style.overflowX = "hidden";
+    document.body.style.overflowX = "hidden";
+
+   
+    document.documentElement.style.width = "100vw";
+    document.body.style.width = "100vw";
+});
