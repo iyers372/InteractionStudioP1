@@ -47,18 +47,18 @@ h1, h2 {
 
 h1 {
     top: 10%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 5px;
 }
 
 h2 {
     top: 15%;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 #new-text {
     font-family: 'CustomFont', sans-serif !important;
-    font-size: 6rem;
+    font-size: 4rem;
     margin-bottom: 15px;
     color: rgb(255, 0, 0);
     text-align: center;
