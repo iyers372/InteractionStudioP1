@@ -47,7 +47,7 @@ h1, h2 {
 
 h1 {
     top: 10%;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 5px;
 }
 
@@ -58,7 +58,7 @@ h2 {
 
 #new-text {
     font-family: 'CustomFont', sans-serif !important;
-    font-size: 7rem;
+    font-size: 6rem;
     margin-bottom: 15px;
     color: rgb(255, 0, 0);
     text-align: center;

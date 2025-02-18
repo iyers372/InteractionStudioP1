@@ -65,21 +65,23 @@ document.addEventListener("DOMContentLoaded", function () {
    
     function addLongPress(element) {
         let pressTimer;
-
     
+       
         element.addEventListener("touchstart", (e) => {
             pressTimer = setTimeout(() => {
                 element.classList.add("hover-effect"); 
             }, 500); 
         });
-
+    
        
         element.addEventListener("touchend", (e) => {
             clearTimeout(pressTimer);
-            element.classList.remove("hover-effect");
+            setTimeout(() => {
+                element.classList.remove("hover-effect"); 
+            }, 200);
         });
-
+    
         
         element.addEventListener("touchmove", () => clearTimeout(pressTimer));
     }
-});
+})
