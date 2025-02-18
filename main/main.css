@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'CustomFont';
     src: url('font/digital-7.ttf') format('truetype');
@@ -6,24 +5,49 @@
     font-style: normal;
 }
 
-body {
+/* ✅ Fix Full-Height Full-Width Display */
+body, html {
     margin: 0;
     padding: 0;
     font-family: 'Andale Mono', monospace;
     background: black;
     color: #ffffff;
-    overflow-x: hidden;
-    white-space: nowrap;
+    overflow-x: auto; /* Allows scrolling if needed */
+    overflow-y: auto;
     font-size: 0.7rem;
-    line-height: 0;
-    margin-bottom: 0;
+    line-height: 1.2;
+    width: 100vw;  /* ✅ Ensure full width */
+    height: 100vh; /* ✅ Ensure full height */
 }
 
+/* ✅ Fix Main Container Full-Screen */
+#main-container {
+    display: none;
+    width: 100vw; /* ✅ Fixes incorrect width */
+    height: 100vh; /* ✅ Full viewport height */
+    background: url('imgs/binaryredoagain.gif') center;
+    background-repeat: repeat;
+    background-size: contain;
+    position: relative;
+    overflow: hidden;
+}
 
+#main-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); 
+    z-index: -1;
+}
+
+/* ✅ Fix Countdown Container */
 #countdown-container {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    width: 100vw; /* ✅ Ensure full width */
+    height: 100vh; /* ✅ Ensure full height */
     background: url('imgs/main.gif') center/cover no-repeat;
     display: flex;
     justify-content: center;
@@ -34,35 +58,11 @@ body {
     transition: opacity 1s ease-in-out;
 }
 
-
-#main-container {
-    display: none;
-    width: 100vw;
-    height: 100vh;
-    background: url('imgs/binaryredoagain.gif') center;
-    background-repeat: repeat;
-    background-size: contain;
-    position: relative;
-    overflow: hidden;
-    font-size: 0.8rem;
-}
-
-#main-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8); 
-    z-index: -1;
-}
-
-
+/* ✅ Fix Content Layout */
 #content-container {
     position: relative;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: start;
     align-items: start;
     padding: 5% 10%;
@@ -70,75 +70,22 @@ body {
     overflow-y: auto;
 }
 
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Andale Mono', monospace;
-    background: black;
-    color: #ffffff;
-    overflow-x: hidden;
-    white-space: nowrap;
-    font-size: 0.8rem;
+/* ✅ Responsive Grid for Larger Screens */
+@media screen and (min-width: 769px) {
+    #content-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 5vw; 
+    }
 }
 
-
-#countdown-container {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: url('imgs/main.gif') center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 5rem;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-    transition: opacity 1s ease-in-out;
-}
-
-#main-container {
-    display: none;
-    width: 100vw;
-    height: 100vh;
-    background: url('imgs/binaryredoagain.gif') center;
-    background-repeat: repeat;
-    background-size: contain;
-    position: relative;
-    overflow: hidden;
-}
-
-#main-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8); 
-    z-index: -1;
-}
-
-
-#content-container {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 5vw; 
-    align-items: start;
-    padding: 5% 10%;
-    height: 100vh;
-    overflow-y: auto;
-}
-
-
+/* ✅ Timer & Poem Columns */
 #timer-column:first-child {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
 }
-
 
 #poem-column {
     display: flex;
@@ -147,7 +94,6 @@ body {
     text-align: center;
 }
 
-
 #timer-column:last-child {
     display: flex;
     flex-direction: column;
@@ -155,23 +101,14 @@ body {
     text-align: right;
 }
 
-
-.timestamp, .poem-line {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-
-.timestamp, .poem-line {
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-}
-
-
+/* ✅ Fix Final Poem Display */
 #final-poem {
     margin-top: 10px;
     opacity: 0;
     text-align: center;
     position: absolute;
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
     font-size: 0.9rem;
     color: white;
@@ -179,6 +116,7 @@ body {
     line-height: 1.6;
 }
 
+/* ✅ Instruction Message */
 #instruction-message {
     position: absolute;
     top: 50%;
@@ -194,18 +132,18 @@ body {
     transition: opacity 1s ease-in-out;
 }
 
-
+/* ✅ Make Poem Lines Draggable */
 .draggable-line {
     cursor: grab;
     transition: transform 0.2s ease-in-out;
 }
-
 
 .draggable-line:active {
     cursor: grabbing;
     transform: scale(1.1);
 }
 
+/* ✅ Fix "Repeat Experience" Button */
 #repeat-experience {
     position: fixed;
     bottom: 40px;
@@ -214,30 +152,16 @@ body {
     font-size: 1.3rem; 
     color: rgb(255, 0, 0);
     text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8), 
-    0px 0px 20px rgba(255, 0, 0, 0.6),
-    0px 0px 30px rgba(255, 0, 0, 0.4);
-
-text-decoration: none;
+                0px 0px 20px rgba(255, 0, 0, 0.6),
+                0px 0px 30px rgba(255, 0, 0, 0.4);
+    text-decoration: none;
     font-family: "CustomFont", sans-serif; 
     opacity: 0; 
     transition: opacity 1.5s ease-in-out;
     cursor: pointer;
 }
 
-@media (min-width: 768px) {
-    #repeat-experience {
-        font-size: 1.3rem; 
-    }
-}
-
-@media (min-width: 1024px) {
-    #repeat-experience {
-        font-size: 1.5rem;
-    }
-}
-
-
-
+/* ✅ Media Queries for Font Scaling */
 @media screen and (min-width: 481px) {
     body {
         font-size: 1.2rem;
@@ -250,12 +174,7 @@ text-decoration: none;
         line-height: 1.4;
         width: 60%;
     }
-    #repeat-experience {
-        font-size: 1.3rem; 
-    }
 }
-
-
 
 @media screen and (min-width: 769px) {
     #main-container {
@@ -269,11 +188,7 @@ text-decoration: none;
         line-height: 1.6;
         width: 70%;
     }
-    #repeat-experience {
-        font-size: 1.3rem; 
-    }
 }
-
 
 @media screen and (min-width: 1025px) {
     #main-container {
@@ -286,8 +201,5 @@ text-decoration: none;
         font-size: 2.2rem;
         line-height: 1.8;
         width: 80%;
-    }
-    #repeat-experience {
-        font-size: 2.5rem; 
     }
 }
