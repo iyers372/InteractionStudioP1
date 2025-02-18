@@ -12,8 +12,8 @@ body {
     font-family: 'Andale Mono', monospace;
     background: black;
     color: #ffffff;
-    overflow-x: auto;
-    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
     white-space: nowrap;
     font-size: 0.7rem;
     line-height: 0;
