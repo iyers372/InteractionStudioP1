@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let countdown = 3;
 
-    
     const countdownInterval = setInterval(() => {
         countdown--;
         countdownText.textContent = countdown;
@@ -25,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, 1000);
 
-    
     function typeText(element, text, speed, callback) {
         let index = 0;
         function type() {
@@ -40,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
         type();
     }
 
-  
     function startPoemSequence() {
         let index = 0;
 
@@ -68,9 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-
-
-
 function triggerFinalAnimation() {
     console.log("Triggering Final Animation...");
 
@@ -78,7 +72,7 @@ function triggerFinalAnimation() {
     const poemLines = document.querySelectorAll(".poem-line");
     const background = document.getElementById("main-container");
 
-    
+   
     setTimeout(() => {
         timestamps.forEach((timestamp) => {
             timestamp.style.transition = "transform 1s ease-in-out, opacity 1s ease-in-out";
@@ -92,13 +86,13 @@ function triggerFinalAnimation() {
             poemLine.style.opacity = "0";
         });
 
-        
+       
         setTimeout(() => {
             background.style.transition = "opacity 1.5s ease-in-out";
             background.style.opacity = "0";
         }, 1000);
 
-        
+       
         setTimeout(() => {
             const instructionMessage = document.createElement("div");
             instructionMessage.id = "instruction-message";
@@ -112,9 +106,8 @@ function triggerFinalAnimation() {
                 if (!isDeleting && index < messageText.length) {
                     instructionMessage.innerHTML = messageText.substring(0, index + 1);
                     index++;
-                    setTimeout(typeMessage, 50); 
+                    setTimeout(typeMessage, 50);
                 } else if (!isDeleting) {
-                    
                     setTimeout(() => {
                         isDeleting = true;
                         typeMessage();
@@ -122,17 +115,15 @@ function triggerFinalAnimation() {
                 } else if (isDeleting && index > 0) {
                     instructionMessage.innerHTML = messageText.substring(0, index - 1);
                     index--;
-                    setTimeout(typeMessage, 50); 
+                    setTimeout(typeMessage, 50);
                 } else {
-                    
                     showDraggablePoem();
                 }
             }
             typeMessage();
         }, 2000);
-    }, 15000);
+    }, 65000); 
 }
-
 
 function showDraggablePoem() {
     console.log("Displaying final poem lines...");
@@ -145,7 +136,7 @@ function showDraggablePoem() {
         poemContainer.style.opacity = "0";
         poemContainer.style.transition = "opacity 1.5s ease-in-out";
         poemContainer.style.position = "absolute";
-        poemContainer.style.top = "10px";  
+        poemContainer.style.top = "10px";
         poemContainer.style.left = "50%";
         poemContainer.style.transform = "translateX(-50%)";
         poemContainer.style.textAlign = "center";
@@ -194,16 +185,7 @@ function showDraggablePoem() {
     setTimeout(() => {
         document.getElementById("repeat-experience").style.opacity = "1"; 
     }, 1000);
-    
 }
-
-
-    setTimeout(() => {
-        poemContainer.style.opacity = "1";
-        makeDraggable();
-    }, 500);
-
-
 
 function makeDraggable() {
     console.log("Making poem lines draggable...");
@@ -230,28 +212,5 @@ function makeDraggable() {
                 document.onmouseup = null;
             };
         });
-
-        
-        line.addEventListener("touchstart", (e) => {
-            isDragging = true;
-            let touch = e.touches[0];
-            let offsetX = touch.clientX - line.getBoundingClientRect().left;
-            let offsetY = touch.clientY - line.getBoundingClientRect().top;
-
-            document.ontouchmove = (event) => {
-                if (!isDragging) return;
-                let moveTouch = event.touches[0];
-                line.style.left = `${moveTouch.clientX - offsetX}px`;
-                line.style.top = `${moveTouch.clientY - offsetY}px`;
-            };
-
-            document.ontouchend = () => {
-                isDragging = false;
-                document.ontouchmove = null;
-                document.ontouchend = null;
-            };
-        });
     });
 }
-
-
