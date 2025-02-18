@@ -12,8 +12,8 @@ body {
     font-family: 'Andale Mono', monospace;
     background: black;
     color: #ffffff;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-x: auto;
+    overflow-y: auto;
     white-space: nowrap;
     font-size: 0.7rem;
     line-height: 0;
@@ -80,7 +80,7 @@ body {
     font-family: 'Andale Mono', monospace;
     background: black;
     color: #ffffff;
-    overflow-x: hidden;
+    overflow-x: auto;
     white-space: nowrap;
     font-size: 0.7rem;
 }
@@ -187,7 +187,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: white;
     background: rgba(0, 0, 0, 0.7);
     padding: 10px 15px;
