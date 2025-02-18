@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
            
             const newText = document.createElement("a");
             newText.id = "new-text";
-            newText.href = "../main/main.html"; 
+            newText.href = "main/main.html"; 
             newText.textContent = "GO:AHEAD";
 
             document.body.appendChild(newText);
