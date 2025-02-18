@@ -1,4 +1,4 @@
-/* ✅ General Styles */
+
 @font-face {
     font-family: 'CustomFont';
     src: url('font/digital-7.ttf') format('truetype');
@@ -19,7 +19,7 @@ body {
     margin-bottom: 0;
 }
 
-/* ✅ Countdown Overlay */
+
 #countdown-container {
     position: fixed;
     width: 100vw;
@@ -34,7 +34,7 @@ body {
     transition: opacity 1s ease-in-out;
 }
 
-/* ✅ Main Content */
+
 #main-container {
     display: none;
     width: 100vw;
@@ -54,15 +54,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* ✅ Adjust opacity here */
+    background: rgba(0, 0, 0, 0.8); 
     z-index: -1;
 }
 
-/* ✅ Mobile Layout: One Continuous Column */
+
 #content-container {
     position: relative;
     display: flex;
-    flex-direction: column; /* ✅ Default mobile: Single column */
+    flex-direction: column; 
     justify-content: start;
     align-items: start;
     padding: 5% 10%;
@@ -70,8 +70,7 @@ body {
     overflow-y: auto;
 }
 
-/* ✅ Default: Timestamps & Poem in Single Column */
-/* ✅ General Styles */
+
 body {
     margin: 0;
     padding: 0;
@@ -83,7 +82,7 @@ body {
     font-size: 0.8rem;
 }
 
-/* ✅ Countdown Overlay */
+
 #countdown-container {
     position: fixed;
     width: 100vw;
@@ -98,7 +97,6 @@ body {
     transition: opacity 1s ease-in-out;
 }
 
-/* ✅ Main Content */
 #main-container {
     display: none;
     width: 100vw;
@@ -117,23 +115,23 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* ✅ Adjust opacity here */
+    background: rgba(0, 0, 0, 0.8); 
     z-index: -1;
 }
 
-/* ✅ Grid Layout Based on Provided Design */
+
 #content-container {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* ✅ Three evenly spaced columns */
-    column-gap: 5vw; /* ✅ Adjust space between columns */
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5vw; 
     align-items: start;
     padding: 5% 10%;
     height: 100vh;
     overflow-y: auto;
 }
 
-/* ✅ Left-aligned Column for First Set of Timestamps */
+
 #timer-column:first-child {
     display: flex;
     flex-direction: column;
@@ -141,7 +139,7 @@ body {
     text-align: left;
 }
 
-/* ✅ Center-aligned Poem Lines */
+
 #poem-column {
     display: flex;
     flex-direction: column;
@@ -149,7 +147,7 @@ body {
     text-align: center;
 }
 
-/* ✅ Right-aligned Column for Second Set of Timestamps */
+
 #timer-column:last-child {
     display: flex;
     flex-direction: column;
@@ -157,7 +155,7 @@ body {
     text-align: right;
 }
 
-/* ✅ TypeText Fade-in Effect */
+
 .timestamp, .poem-line {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
@@ -168,7 +166,7 @@ body {
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-/* ✅ Final Stacked Poem */
+
 #final-poem {
     margin-top: 10px;
     opacity: 0;
@@ -180,7 +178,7 @@ body {
     transition: opacity 1.5s ease-in-out;
     line-height: 1.6;
 }
-/* ✅ Instruction Message */
+
 #instruction-message {
     position: absolute;
     top: 50%;
@@ -196,13 +194,13 @@ body {
     transition: opacity 1s ease-in-out;
 }
 
-/* ✅ Draggable Poem Lines */
+
 .draggable-line {
     cursor: grab;
     transition: transform 0.2s ease-in-out;
 }
 
-/* ✅ Dragging Effect */
+
 .draggable-line:active {
     cursor: grabbing;
     transform: scale(1.1);
@@ -210,36 +208,36 @@ body {
 
 #repeat-experience {
     position: fixed;
-    bottom: 40px; /* ✅ Stays at the bottom */
+    bottom: 40px;
     left: 50%;
-    transform: translateX(-50%); /* ✅ Centered */
-    font-size: 1.3rem; /* ✅ Mobile-first font size */
+    transform: translateX(-50%); 
+    font-size: 1.3rem; 
     color: rgb(255, 0, 0);
     text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8), 
     0px 0px 20px rgba(255, 0, 0, 0.6),
     0px 0px 30px rgba(255, 0, 0, 0.4);
 
 text-decoration: none;
-    font-family: "CustomFont", sans-serif; /* ✅ Change to your font */
-    opacity: 0; /* ✅ Hidden initially */
+    font-family: "CustomFont", sans-serif; 
+    opacity: 0; 
     transition: opacity 1.5s ease-in-out;
-    cursor: pointer; /* ✅ Optional: Makes it clickable */
+    cursor: pointer;
 }
 
 @media (min-width: 768px) {
     #repeat-experience {
-        font-size: 1.3rem; /* ✅ Bigger on tablets */
+        font-size: 1.3rem; 
     }
 }
 
 @media (min-width: 1024px) {
     #repeat-experience {
-        font-size: 1.5rem; /* ✅ Even bigger on desktop */
+        font-size: 1.5rem;
     }
 }
 
 
-/* ✅ Tablets (481px - 768px) */
+
 @media screen and (min-width: 481px) {
     body {
         font-size: 1.2rem;
@@ -253,12 +251,12 @@ text-decoration: none;
         width: 60%;
     }
     #repeat-experience {
-        font-size: 1.3rem; /* ✅ Bigger on tablets */
+        font-size: 1.3rem; 
     }
 }
 
 
-/* ✅ Laptops & Small Desktops (769px - 1024px) */
+
 @media screen and (min-width: 769px) {
     #main-container {
         font-size: 1.8rem;
@@ -272,11 +270,11 @@ text-decoration: none;
         width: 70%;
     }
     #repeat-experience {
-        font-size: 1.3rem; /* ✅ Bigger on tablets */
+        font-size: 1.3rem; 
     }
 }
 
-/* ✅ Large Desktops (1025px and above) */
+
 @media screen and (min-width: 1025px) {
     #main-container {
         font-size: 2.5rem;
@@ -290,6 +288,6 @@ text-decoration: none;
         width: 80%;
     }
     #repeat-experience {
-        font-size: 2.5rem; /* ✅ Bigger on tablets */
+        font-size: 2.5rem; 
     }
 }

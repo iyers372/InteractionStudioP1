@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let countdown = 3;
 
-    // ✅ Countdown Timer Before Starting Main Sequence
+    
     const countdownInterval = setInterval(() => {
         countdown--;
         countdownText.textContent = countdown;
@@ -20,12 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 countdownContainer.style.display = "none";
                 mainContainer.style.display = "block";
-                startPoemSequence(); // ✅ Ensure text starts appearing
+                startPoemSequence(); 
             }, 1000);
         }
     }, 1000);
 
-    // ✅ TypeText Effect for Typing Animation
+    
     function typeText(element, text, speed, callback) {
         let index = 0;
         function type() {
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         type();
     }
 
-    // ✅ Reveal timestamps & poem lines at independent speeds
+  
     function startPoemSequence() {
         let index = 0;
 
@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     setTimeout(showNextTimestamp, 2);
                 });
 
-                // ✅ Poem lines appear every full second and use TypeText
                 if (index % 500 === 0 && (index / 500) < poemLines.length) {
                     const poemIndex = index / 500;
                     const poemLine = poemLines[poemIndex];
@@ -79,7 +78,7 @@ function triggerFinalAnimation() {
     const poemLines = document.querySelectorAll(".poem-line");
     const background = document.getElementById("main-container");
 
-    // ✅ Move Everything Left & Fade Out
+    
     setTimeout(() => {
         timestamps.forEach((timestamp) => {
             timestamp.style.transition = "transform 1s ease-in-out, opacity 1s ease-in-out";
@@ -93,13 +92,13 @@ function triggerFinalAnimation() {
             poemLine.style.opacity = "0";
         });
 
-        // ✅ Fade Out Background
+        
         setTimeout(() => {
             background.style.transition = "opacity 1.5s ease-in-out";
             background.style.opacity = "0";
         }, 1000);
 
-        // ✅ Show Instruction Message with Typing & Deleting Effect
+        
         setTimeout(() => {
             const instructionMessage = document.createElement("div");
             instructionMessage.id = "instruction-message";
@@ -113,9 +112,9 @@ function triggerFinalAnimation() {
                 if (!isDeleting && index < messageText.length) {
                     instructionMessage.innerHTML = messageText.substring(0, index + 1);
                     index++;
-                    setTimeout(typeMessage, 50); // ✅ Adjust typing speed
+                    setTimeout(typeMessage, 50); 
                 } else if (!isDeleting) {
-                    // ✅ Keep the message visible for 3 seconds before deleting
+                    
                     setTimeout(() => {
                         isDeleting = true;
                         typeMessage();
@@ -123,9 +122,9 @@ function triggerFinalAnimation() {
                 } else if (isDeleting && index > 0) {
                     instructionMessage.innerHTML = messageText.substring(0, index - 1);
                     index--;
-                    setTimeout(typeMessage, 50); // ✅ Adjust deleting speed
+                    setTimeout(typeMessage, 50); 
                 } else {
-                    // ✅ Show draggable poem after deletion completes
+                    
                     showDraggablePoem();
                 }
             }
@@ -134,7 +133,7 @@ function triggerFinalAnimation() {
     }, 15000);
 }
 
-// ✅ Function to Show & Make Poem Lines Draggable
+
 function showDraggablePoem() {
     console.log("Displaying final poem lines...");
     
@@ -146,15 +145,15 @@ function showDraggablePoem() {
         poemContainer.style.opacity = "0";
         poemContainer.style.transition = "opacity 1.5s ease-in-out";
         poemContainer.style.position = "absolute";
-        poemContainer.style.top = "10px";  // ✅ Starts at the top of the screen
+        poemContainer.style.top = "10px";  
         poemContainer.style.left = "50%";
-        poemContainer.style.transform = "translateX(-50%)"; // ✅ Only center horizontally
+        poemContainer.style.transform = "translateX(-50%)";
         poemContainer.style.textAlign = "center";
         poemContainer.style.fontSize = "0.9rem";
         poemContainer.style.color = "white";
-        poemContainer.style.lineHeight = "2.6"; // ✅ Ensures consistent spacing
-        poemContainer.style.width = "80%"; // ✅ Prevents text from stretching too far
-        poemContainer.style.margin = "0 auto"; // ✅ Centers it properly
+        poemContainer.style.lineHeight = "2.6"; 
+        poemContainer.style.width = "80%"; 
+        poemContainer.style.margin = "0 auto"; 
         document.body.appendChild(poemContainer);
     }
 
@@ -182,7 +181,7 @@ function showDraggablePoem() {
         lineElement.setAttribute("draggable", "true");
         lineElement.style.position = "absolute";
         lineElement.style.left = "50%";
-        lineElement.style.top = `${10 + index * 30}px`; // ✅ Adjusts position to start at the top
+        lineElement.style.top = `${10 + index * 30}px`; 
         lineElement.style.transform = "translateX(-50%)";
         poemContainer.appendChild(lineElement);
     });
@@ -193,7 +192,7 @@ function showDraggablePoem() {
     }, 500);
 
     setTimeout(() => {
-        document.getElementById("repeat-experience").style.opacity = "1"; // ✅ Fades in
+        document.getElementById("repeat-experience").style.opacity = "1"; 
     }, 1000);
     
 }
@@ -205,7 +204,7 @@ function showDraggablePoem() {
     }, 500);
 
 
-// ✅ Function to Make Poem Lines Draggable
+
 function makeDraggable() {
     console.log("Making poem lines draggable...");
     
@@ -232,7 +231,7 @@ function makeDraggable() {
             };
         });
 
-        // ✅ Enable touch-based dragging for mobile
+        
         line.addEventListener("touchstart", (e) => {
             isDragging = true;
             let touch = e.touches[0];
@@ -255,5 +254,5 @@ function makeDraggable() {
     });
 }
 
-// ✅ Trigger the animation after 15 seconds
+
 setTimeout(triggerFinalAnimation, 65000);

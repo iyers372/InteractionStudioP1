@@ -1,4 +1,4 @@
-/* ✅ Custom Font Setup */
+
 @font-face {
     font-family: 'CustomFont';
     src: url('font/digital-7.ttf') format('truetype'),
@@ -7,7 +7,7 @@
     font-style: normal;
 }
 
-/* General Styles */
+
 body {
     margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@ body {
     overflow: hidden;
 }
 
-/* Video Container */
+
 #video-container {
     position: absolute;
     width: 100vw;
@@ -34,7 +34,7 @@ video {
     z-index: 0;
 }
 
-/* Title Text */
+
 h1, h2 {
     position: absolute;
     left: 50%;
@@ -56,7 +56,6 @@ h2 {
     font-size: 1rem;
 }
 
-/* ✅ "GO:AHEAD" Text After Video Ends */
 #new-text {
     font-family: 'CustomFont', sans-serif !important;
     font-size: 7rem;
@@ -69,47 +68,46 @@ h2 {
     transform: translate(-50%, -50%);
     padding: 10px;
     opacity: 0;
-    transition: opacity 0.5s ease-out, transform 0.3s ease-in-out; /* ✅ Add slight movement */
+    transition: opacity 0.5s ease-out, transform 0.3s ease-in-out; 
 
-    /* ✅ Outer Glow Effect */
+  
     text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8), 
                  0px 0px 20px rgba(255, 0, 0, 0.6),
                  0px 0px 30px rgba(255, 0, 0, 0.4);
     
     text-decoration: none;
     display: inline-block;
-    cursor: pointer; /* ✅ Make sure users know it’s clickable */
+    cursor: pointer; 
 }
 
-/* ✅ Hover Effect: Slight Movement & Glow */
+
 #new-text:hover {
     color: white;
     text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
-    transform: translate(-50%, -50%) scale(1.05); /* ✅ Subtle zoom effect */
+    transform: translate(-50%, -50%) scale(1.05); 
 }
-/* ✅ Fade-out effect for h1, h2, and video */
+
 .fade-out {
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
 }
 
-/* ✅ Faster Fade-in effect for "GO:AHEAD" */
+
 .fade-in {
     opacity: 1 !important;
     transition: opacity 0.5s ease-in-out;
 }
 
-/* Mobile-First Design - Default Mobile Styles Applied */
-/* ✅ Hover Effect & Long Press Effect */
+
 #new-text:hover,
 #new-text.hover-effect { 
     color: white;
     text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
-    transform: translate(-50%, -50%) scale(1.05); /* ✅ Subtle zoom effect */
+    transform: translate(-50%, -50%) scale(1.05);
 }
 
 
-/* Tablet Adjustments */
+
 @media screen and (min-width: 768px) {
     h1 {
         font-size: 2.5rem;
@@ -126,7 +124,7 @@ h2 {
     }
 }
 
-/* Desktop Adjustments */
+
 @media screen and (min-width: 1024px) {
     h1 {
         font-size: 3.5rem;
